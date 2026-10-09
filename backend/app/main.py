@@ -32,7 +32,10 @@ api = APIRouter(prefix="/api")
 def health():
     return {"status": "ok"}
 
-
+@app.get("/")
+def read_root():
+    return {"status": "ok", "message": "Backend API is running"}
+    
 api.include_router(auth.router)
 api.include_router(student.router)
 api.include_router(faculty.router)
