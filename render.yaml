@@ -1,0 +1,20 @@
+# Render Blueprint for the FastAPI backend (free plan).
+# The database is Neon (free tier); paste its pooled connection string into DATABASE_URL.
+services:
+  - type: web
+    name: student-portal-api
+    runtime: docker
+    plan: free
+    rootDir: backend
+    dockerfilePath: ./Dockerfile
+    healthCheckPath: /api/health
+    autoDeploy: true
+    envVars:
+      - key: DATABASE_URL
+        sync: false # set in the Render dashboard: Neon pooled URL, ?sslmode=require
+      - key: JWT_SECRET
+        generateValue: true
+      - key: CORS_ORIGINS
+        sync: false # e.g. https://student-portal.vercel.app
+      - key: SEED_DEMO
+        value: "true" # set to "false" once real data is loaded

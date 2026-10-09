@@ -1,0 +1,33 @@
+# Local environments and generated files
+.venv*/
+**/.venv*/
+node_modules/
+**/node_modules/
+__pycache__/
+**/__pycache__/
+.pytest_cache/
+**/.pytest_cache/
+*.pyc
+*.pyo
+*.db
+*.db-shm
+*.db-wal
+*.sqlite
+*.sqlite3
+*.sqlite-*
+dist/
+**/dist/
+*.tsbuildinfo
+
+# Local environment files (keep safe templates)
+.env
+.env.*
+!.env.example
+!.env.*.example
+**/.env
+**/.env.*
+!**/.env.example
+!**/.env.*.example
+
+# Local editor/assistant configuration
+.claude/
